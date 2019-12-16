@@ -1,0 +1,23 @@
+{
+  "id": "1566429",
+  "name": "music-",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "517496",
+      "name": "user",
+      "font_class": "custom-user",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "5119346",
+      "name": "search",
+      "font_class": "search",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    }
+  ]
+}
