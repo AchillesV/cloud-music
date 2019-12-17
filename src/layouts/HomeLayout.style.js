@@ -5,8 +5,8 @@ export const Top=styled.div`
   display: flex;
   align-item: center;
   justify-content: center;
-  font-size: 120%
-  padding: 2%
+  font-size: 120%;
+  padding: 10px;
   .menu, .search{
     font-size: 130%
   }
@@ -30,10 +30,10 @@ export const Top=styled.div`
 `;
 
 export const Tab=styled.div`
-  display: flex
+  display: flex;
   align-item: center;
   justify-content: center;
-  padding: 2% 4%;
+  padding: 8px 16px;
   text-align: center;
   span {
     color: black;
@@ -41,5 +41,5 @@ export const Tab=styled.div`
 `;
 
 export const TabItem=styled.div`
-  width: 66px;
+  width: 77px;
 `
