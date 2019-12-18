@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import Swiper from 'swiper';
 import "swiper/css/swiper.css";
 
+
+
+
 function Slider(props) {
   const [sliderSwiper, setSliderSwiper] = useState(null);
   // const { bannerList } = props;
@@ -99,42 +102,44 @@ function Slider(props) {
 	}]
 
   useEffect(()=>{
-    if(bannerList.length || !sliderSwiper) {
-      let sliderSwiper = new Swiper(".slider-container", {
+    if(!sliderSwiper && bannerList.length) {
+      let sliderSwiper = new Swiper('.slider-container', {
         loop: true,
         autoplay: {
-          delay: 3000,
-          /* disableOnInteraction: false, */
+          delay: 2000,
+          disableOnInteraction: false
         },
-        pagination: {el: '.swiper-pagination'},
-      });
-
-      setSliderSwiper(sliderSwiper);
+        pagination: {el: '.swiper-pagination'}
+      })
+      console.log('666');
+      setSliderSwiper(sliderSwiper)
     }
-  },[bannerList.length, sliderSwiper])
+  }, [sliderSwiper, bannerList.length])
 
+  
   return (
     <SliderContainer>
       <div className="before"></div>
-
       <div className="slider-container">
         <div className="swiper-wrapper">
           {
             bannerList.map(slider => {
               return (
-                <div className='swiper-slider' key={slider.picUrl} >
-                  <div className='slider-nav'>
-                    <img src={slider.picUrl} width='100%' height='100%' alt='推荐' />
+                <div className="swiper-slide" key={slider.picUrl}>
+                  <div className="slider-nav">
+                    <img src={slider.picUrl} width="100%" height="100%" alt="推荐" />
                   </div>
                 </div>
-              )
+              );
             })
           }
         </div>
-      </div>
+        <div className="swiper-pagination"></div>
+      </div> 
     </SliderContainer>
   )
 }
+
 
 const SliderContainer = styled.div`
   position: relative;
@@ -142,15 +147,9 @@ const SliderContainer = styled.div`
   width: 100%;
   height: 100%;
   margin: auto;
-  background: white;
-  .before{
-    position: absolute;
-    top: -300px;
-    height: 400px;
-    width: 100%;
-    background: #d44439;
-    z-index: 1;
-  }
+  background: transparent;
+
+
   .slider-container{
     position: relative;
     width: 98%;
@@ -170,4 +169,4 @@ const SliderContainer = styled.div`
   }
 `
 
-export default Slider;
+export default React.memo(Slider) ;

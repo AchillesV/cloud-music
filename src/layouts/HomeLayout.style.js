@@ -13,7 +13,7 @@ export const Top=styled.div`
 }
 
   span {
-    flex: 1
+    flex: 1;
   }
 
   span:nth-of-type(2) {
