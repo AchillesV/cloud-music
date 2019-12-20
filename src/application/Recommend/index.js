@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Slider from '../../components/slider/index'
+import RecommendList from '../../components/recommendList/index'
 
 
 
@@ -11,7 +12,7 @@ function Recommend(){
     <Content>
       <div>        
         <Slider></Slider>
-        {/* <RecommendList></RecommendList> */}
+        <RecommendList></RecommendList>
       </div>
     </Content>
   )
